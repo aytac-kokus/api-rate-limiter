@@ -26,7 +26,7 @@ add_action('rest_api_init', function ($wp_rest_server) {
     if ($cache > $max_limit) {
         status_header(429);
         echo wp_json_encode(
-            array('message' => 'Rate limit exceeded: ' . $max_limit . ' requests in a minute is allowed. Please try again after a minute.')
+            array('message' => 'Rate limit exceeded: ' . $max_limit . ' requests per minute is allowed. Please try again after a minute.')
         );
         die;
     }
